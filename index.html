@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1 style="text-align: center; margin-top: 5%;">Image Gallery Slider</h1>
+    <div id="main">
+        <img src="./Images/download.png" id="back">
+        <div id="gallery">
+            <div>
+                <span><img src="./Images/8.jpeg"></span>
+                <span><img src="./Images/6.jpeg"></span>
+                <span><img src="./Images/7.jpeg"></span>
+              </div>
+            <div>
+              <span><img src="./Images/44.jpeg"></span>
+              <span><img src="./Images/2.jpeg"></span>
+              <span><img src="./Images/3.jpeg"></span>
+            </div>
+           
+            
+          </div>
+        <img src="./Images/next1.png" id="next">
+    </div>
+    <script>
+        let scrollcontainer = document.getElementById("gallery")
+        let next = document.getElementById("next")
+        let back = document.getElementById("back")
+        scrollcontainer.addEventListener("wheel",(event)=>{
+            event.preventDefault()
+            scrollcontainer.style.scrollBehavior="auto"
+            scrollcontainer.scrollLeft += event.deltaY
+        })
+        next.addEventListener("click",()=>{
+              scrollcontainer.style.scrollBehavior="smooth"
+            scrollcontainer.scrollLeft += 900
+        })
+        back.addEventListener("click",()=>{
+              scrollcontainer.style.scrollBehavior="smooth"
+            scrollcontainer.scrollLeft -= 900
+        })
+    </script>
+</body>
+</html>
